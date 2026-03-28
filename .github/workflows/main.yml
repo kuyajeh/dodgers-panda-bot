@@ -2,16 +2,16 @@ name: Check Dodgers Win
 on:
   schedule:
     - cron: '0 16 * * *' # Runs at 9:00 AM PT daily
-  workflow_dispatch: # Allows you to run it manually to test
+  workflow_dispatch: # Allows you to run it manually
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: '3.9'
       - name: Install requests
